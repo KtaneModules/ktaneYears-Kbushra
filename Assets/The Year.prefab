@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4110139788581244}
   - component: {fileID: 23206411672064360}
   - component: {fileID: 102694551465723632}
+  - component: {fileID: 114942496537211338}
   m_Layer: 0
   m_Name: Even
   m_TagString: Untagged
@@ -39,6 +40,7 @@ GameObject:
   - component: {fileID: 33165771419122320}
   - component: {fileID: 23358527701692962}
   - component: {fileID: 114441480275943134}
+  - component: {fileID: 114146881618583934}
   m_Layer: 0
   m_Name: Odd key highlight
   m_TagString: Untagged
@@ -57,6 +59,7 @@ GameObject:
   - component: {fileID: 33778486929400184}
   - component: {fileID: 65426929705881708}
   - component: {fileID: 23211715213412242}
+  - component: {fileID: 114222565896772342}
   m_Layer: 0
   m_Name: Year Screen
   m_TagString: Untagged
@@ -91,6 +94,7 @@ GameObject:
   - component: {fileID: 33417649614091050}
   - component: {fileID: 23694535442474440}
   - component: {fileID: 114480963428339718}
+  - component: {fileID: 114206615532697328}
   m_Layer: 0
   m_Name: Even key
   m_TagString: Untagged
@@ -108,6 +112,7 @@ GameObject:
   - component: {fileID: 4867699900730742}
   - component: {fileID: 23566948057271180}
   - component: {fileID: 102541595780614094}
+  - component: {fileID: 114336218009254310}
   m_Layer: 0
   m_Name: Odd
   m_TagString: Untagged
@@ -125,6 +130,7 @@ GameObject:
   - component: {fileID: 4012977364159268}
   - component: {fileID: 23802888450199280}
   - component: {fileID: 102392283262787978}
+  - component: {fileID: 114343547811391284}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -143,6 +149,7 @@ GameObject:
   - component: {fileID: 33657660564646236}
   - component: {fileID: 23012220314195654}
   - component: {fileID: 95695541656563116}
+  - component: {fileID: 114870991301163808}
   m_Layer: 0
   m_Name: Component_PuzzleBackground
   m_TagString: Untagged
@@ -182,6 +189,7 @@ GameObject:
   - component: {fileID: 33467749302649310}
   - component: {fileID: 65454162542894562}
   - component: {fileID: 23127101051411640}
+  - component: {fileID: 114769247467806448}
   m_Layer: 0
   m_Name: Num Screen
   m_TagString: Untagged
@@ -200,6 +208,7 @@ GameObject:
   - component: {fileID: 33898967334365054}
   - component: {fileID: 23843491033230026}
   - component: {fileID: 114982208347650810}
+  - component: {fileID: 114073677610410906}
   m_Layer: 0
   m_Name: Even key highlight
   m_TagString: Untagged
@@ -234,6 +243,7 @@ GameObject:
   - component: {fileID: 4141207128724390}
   - component: {fileID: 23905869669580602}
   - component: {fileID: 102467825760809410}
+  - component: {fileID: 114641948868553040}
   m_Layer: 0
   m_Name: Year
   m_TagString: Untagged
@@ -252,6 +262,7 @@ GameObject:
   - component: {fileID: 33053505008393888}
   - component: {fileID: 23870170370521344}
   - component: {fileID: 114743046368576316}
+  - component: {fileID: 114921843558528238}
   m_Layer: 0
   m_Name: Odd key
   m_TagString: Untagged
@@ -1089,6 +1100,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114073677610410906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584125072048274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Outline
 --- !u!114 &114124210487540426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1100,6 +1124,71 @@ MonoBehaviour:
   m_Script: {fileID: 2144496390, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114146881618583934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056202884523634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Outline
+--- !u!114 &114206615532697328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375235775833150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/Diffuse
+--- !u!114 &114222565896772342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062065232766172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
+--- !u!114 &114336218009254310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407779540967844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - GUI/KT 3D Text Diffuse
+--- !u!114 &114343547811391284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412219256708976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - GUI/KT 3D Text Diffuse
 --- !u!114 &114352221332579364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1186,6 +1275,19 @@ MonoBehaviour:
   AllowSelectionWrapY: 0
   ForceSelectionHighlight: 0
   ForceInteractionHighlight: 0
+--- !u!114 &114641948868553040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1759438295991328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - GUI/KT 3D Text Diffuse
 --- !u!114 &114725071089166464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1230,6 +1332,19 @@ MonoBehaviour:
   m_Script: {fileID: -1675560866, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114769247467806448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582625352919448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114774558092768838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1257,6 +1372,45 @@ MonoBehaviour:
   ModuleType: years
   ModuleDisplayName: The Year
   RequiresTimerVisibility: 0
+--- !u!114 &114870991301163808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415509464249146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
+--- !u!114 &114921843558528238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928562975261396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/Diffuse
+--- !u!114 &114942496537211338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003463674954430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - GUI/KT 3D Text Diffuse
 --- !u!114 &114982208347650810
 MonoBehaviour:
   m_ObjectHideFlags: 1

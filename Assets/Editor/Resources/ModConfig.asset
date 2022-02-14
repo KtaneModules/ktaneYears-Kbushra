@@ -17,4 +17,4 @@ MonoBehaviour:
   description: Time management company at your local bomb manufacture!
   version: 1.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 7b87ce472a5ee96418eed812024855dd, type: 3}
