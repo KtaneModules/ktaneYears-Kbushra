@@ -1,0 +1,17 @@
+{
+  "Author": "That one kid",
+  "Compatibility": "Compatible",
+  "DefuserDifficulty": "Easy",
+  "Description": "Use edgework to open a door or two (and maybe a button) Tags: doors, illogical, random buttons, edgework",
+  "ExpertDifficulty": "Medium",
+  "ModuleID": "FlipDoor",
+  "Name": "The Door",
+  "Origin": "Mods",
+  "Published": "2022-01-29",
+  "SortKey": "DOOR",
+  "SourceUrl": "https://github.com/Kbushra/KtaneFlipDoor",
+  "Souvenir": { "Status": "NotACandidate" },
+  "SteamID": "2734391870",
+  "Symbol": "Tdor",
+  "Type": "Regular"
+}
