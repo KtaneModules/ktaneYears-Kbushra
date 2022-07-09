@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using KModkit;
-using Newtonsoft.Json;
-using System.Linq;
-using System.Text.RegularExpressions;
 using Rnd = UnityEngine.Random;
+using System.Collections;
 
 public class SimpleModuleScript : MonoBehaviour {
 
@@ -50,6 +47,9 @@ public class SimpleModuleScript : MonoBehaviour {
 		textFinder2 = textMessage2.ToString();
 		screenTexts[1].text = textFinder2;
 
+		Log ("The small display number is " + textFinder1);
+		Log ("Your device's current year is " + textFinder2);
+
 		Invoke ("Modifier", 0);
 	}
 
@@ -59,7 +59,7 @@ public class SimpleModuleScript : MonoBehaviour {
 		textMessage2 = textMessage2 * textMessage1;
 		textMessage2 = textMessage2 - textMessage1;
 		textMessage2 = textMessage2 + 5;
-		textMessage2 = textMessage2 % textMessage1;
+		textMessage2 = Mod (textMessage2, textMessage1);
 
 		if (info.GetSolvedModuleIDs ().Contains ("blackScreens") || info.GetSolvedModuleIDs ().Contains ("blackScreensNot") || info.GetModuleIDs ().Contains ("calendar")) 
 		{
@@ -73,11 +73,12 @@ public class SimpleModuleScript : MonoBehaviour {
 
 		textMessage2 = textMessage2 + textMessage1;
 		textMessage2 = textMessage2 - 9;
+		Log ("The modified year number is " + textMessage2 + ", which is " + (Mod (textMessage2, 2) == 0 ? "even" : "odd"));
 	}
 
 	void YearChecker(KMSelectable pressedButton)
 	{
-		GetComponent<KMAudio>().PlayGameSoundAtTransformWithRef(KMSoundOverride.SoundEffect.ButtonPress, transform);
+		audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, pressedButton.transform);
 		int buttonPosition = new int();
 		for(int i = 0; i < EvenOrOdd.Length; i++)
 		{
@@ -90,20 +91,21 @@ public class SimpleModuleScript : MonoBehaviour {
 
 		if (_isSolved == false) 
 		{
+			Log ("Pressed " + (buttonPosition % 2 == 0 ? "even" : "odd"));
 			switch (buttonPosition) 
 			{
 			case 0:
-				if (textMessage2 % 2 == 1) 
+				if (Mod(textMessage2, 2) == 1) 
 				{
 					incorrect = true;
-					Debug.LogFormat ("It isnt odd! The year number is {0}", textMessage2);
+					Log ("It isn't even! Striking and resetting...");
 				}
 				break;
 			case 1:
-				if (textMessage2 % 2 == 0) 
+				if (Mod(textMessage2, 2) == 0) 
 				{
 					incorrect = true;
-					Debug.LogFormat ("It isnt even! The year number is {0}", textMessage2);
+					Log("It isn't odd! Striking and resetting...");
 				}
 				break;
 			}
@@ -112,13 +114,16 @@ public class SimpleModuleScript : MonoBehaviour {
 				module.HandleStrike ();
 
 				int time = System.DateTime.UtcNow.ToLocalTime().Year;
-				int textMessage2 = time;
+				textMessage2 = time;
 				textFinder2 = textMessage2.ToString();
 				screenTexts[1].text = textFinder2;
 
 				textMessage1 = Rnd.Range(1, 10);
 				textFinder1 = textMessage1.ToString();
 				screenTexts[0].text = textFinder1;
+
+				Log ("The small display number is " + textFinder1);
+				Log ("Your device's current year is " + textFinder2);
 
 				Invoke ("Modifier", 0);
 
@@ -128,6 +133,8 @@ public class SimpleModuleScript : MonoBehaviour {
 			{
 				correct.Play ();
 				module.HandlePass ();
+				_isSolved = true;
+				Log ("Module solved");
 			}
 		}
 	}
@@ -136,5 +143,36 @@ public class SimpleModuleScript : MonoBehaviour {
 	{
 		Debug.LogFormat("[The Year #{0}] {1}", ModuleId, message);
 	}
-}
 
+	int Mod(int x, int m)
+	{
+		int r = x % m;
+		return r < 0 ? r + m : r;
+	}
+
+	//Twitch Plays support
+
+	#pragma warning disable 414
+	private readonly string TwitchHelpMessage = @"!{0} even/e [Presses the button labelled E] | !{0} odd/o [Presses the button labelled O]";
+	#pragma warning restore 414
+
+	IEnumerator ProcessTwitchCommand(string command)
+	{
+		if (command.EqualsIgnoreCase("even") || command.EqualsIgnoreCase("e"))
+        {
+			yield return null;
+			EvenOrOdd[0].OnInteract();
+		}
+		else if (command.EqualsIgnoreCase("odd") || command.EqualsIgnoreCase("o"))
+		{
+			yield return null;
+			EvenOrOdd[1].OnInteract();
+		}
+	}
+
+	IEnumerator TwitchHandleForcedSolve()
+    {
+		EvenOrOdd[Mod (textMessage2, 2)].OnInteract();
+		yield return new WaitForSeconds(.1f);
+	}
+}
